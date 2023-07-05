@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-central-1"
+  region = "us-east-2"
 }
 
 resource "aws_instance" "example" {
@@ -11,7 +11,7 @@ resource "aws_instance" "example" {
   ]
 
   tags = {
-    Name = "React-express-instance"
+    Name = "FE-BE-instance"
   }
 }
 
@@ -35,7 +35,7 @@ resource "aws_security_group" "re-ex" {
 
   ingress {
     from_port   = 3000
-    to_port     = 3000
+    to_port     = 3001
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
