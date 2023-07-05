@@ -25,6 +25,10 @@ jobs:
         run: |
           docker-compose -f docker-compose.yml build
 
+      - name: push image to dockerhub
+        run: docker-compose -f docker-compose.yml push
+
+
           
  
               
