@@ -4,10 +4,13 @@ on:
     branches: 
         - main
 
+env:
+  username: ${{ secrets.DOCKERHUB_USERNAME }}
+  password: ${{ secrets.DOCKERHUB_TOKEN}} 
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
     steps:
       - name: Lowercase the repo name
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
@@ -15,9 +18,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: docker login
+        run: docker login -u username -p password
+
       - name: Build and Push Image
         run: |
           docker-compose -f docker-compose.yml build
+
           
  
               
