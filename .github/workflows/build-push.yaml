@@ -1,12 +1,8 @@
 name: Build and Push Docker Images
 on:
   push:
-    branches: [main]
-    paths:
-        - './backend/**'
-        - '.frontend/**'
-        - './ini_sql_scripts/**'
-        - docker-compose.yaml
+    branches: 
+        - main
 
 
 
