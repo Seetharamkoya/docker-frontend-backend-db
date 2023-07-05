@@ -7,7 +7,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   key_name      = "Docker-aws"
   vpc_security_group_ids = [
-    aws_security_group.re-ex.id
+    aws_security_group.FE-BE.id
   ]
 
   tags = {
