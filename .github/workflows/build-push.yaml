@@ -4,9 +4,6 @@ on:
     branches: 
         - main
 
-env:
-  username: ${{ secrets.DOCKERHUB_USERNAME }}
-  password: ${{ secrets.DOCKERHUB_TOKEN}} 
 
 jobs:
   build-and-push:
@@ -19,7 +16,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: docker login
-        run: docker login -u username -p password
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN}}
 
       - name: Build and Push Image
         run: |
