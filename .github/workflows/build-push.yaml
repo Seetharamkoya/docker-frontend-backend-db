@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN}}
 
       - name: push image to dockerhub
-        run: docker-compose push seetharamkoya/docker-frontend-backend-db
+        run: docker-compose push 
 
 
           
