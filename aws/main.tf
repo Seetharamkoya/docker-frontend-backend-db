@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-04e601abe3e1a910f"
+  ami           = "ami-024e6efaf93d85776"
   instance_type = "t2.micro"
   key_name      = "Docker-aws"
   vpc_security_group_ids = [
